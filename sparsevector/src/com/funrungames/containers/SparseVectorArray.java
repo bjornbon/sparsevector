@@ -20,7 +20,7 @@ public class SparseVectorArray  implements ISparseVector
 	private TreeMap<Integer, Double> vectordata = new TreeMap<Integer, Double>();
 
 	/**
-	 * This is modelling the non-zeros in a sparse vector by storing a pair of indeces and its values.
+	 * This is modeling the non-zeros in a sparse vector by storing a pair of indices and its values.
 	 * All indices not available we assume the value is 0.
 	 */
 	int[] indeces;
