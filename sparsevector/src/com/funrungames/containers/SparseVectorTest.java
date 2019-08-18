@@ -78,14 +78,14 @@ public class SparseVectorTest
 		testcosinedistance(0.0, d3, (d3));
 		testcosinedistance(0.0, d7, (d7));
 
-		testcosinedistance(cosineDistance(d1d, d3d), d1, (d3));
-		testcosinedistance(cosineDistance(d1d, d7d), d1, (d7));
-		testcosinedistance(cosineDistance(d1d, d2d), d1, (d2));
-		testcosinedistance(cosineDistance(d4d, d3d), d3, (d4));
+		testcosinedistance(cosineDistance(d1d, d3d), d1, d3);
+		testcosinedistance(cosineDistance(d1d, d7d), d1, d7);
+		testcosinedistance(cosineDistance(d1d, d2d), d1, d2);
+		testcosinedistance(cosineDistance(d4d, d3d), d3, d4);
 		
-		testcosinedistance(cosineDistance(d5d, d6d), d5, (d6));
-		testcosinedistance(cosineDistance(d5d, d7d), d5, (d7));
-		testcosinedistance(cosineDistance(d6d, d7d), d6, (d7));	
+		testcosinedistance(cosineDistance(d5d, d6d), d5, d6);
+		testcosinedistance(cosineDistance(d5d, d7d), d5, d7);
+		testcosinedistance(cosineDistance(d6d, d7d), d6, d7);	
 	}
 	
 	private void testdot(double expected, ISparseVector v1, ISparseVector v2)
@@ -105,6 +105,7 @@ public class SparseVectorTest
 		Assert.assertEquals(d1, d2, 1e-6);
 	}
 	
+	// a not optimized implementation to do cosine distance. Used for reference
 	private double cosineDistance(double[] p1, double[] p2)
 	{
 		double r = 0;
