@@ -4,11 +4,27 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+ * A fast implementation of a sparse vector.
+ * Manipulation of the vector (adding non-zeros) is done using a TreeMap.
+ * After that the non-zeros are added in a small array so that operations can be performed fast.
+ * @author bjornbon
+ *
+ */
 public class SparseVectorArray  implements ISparseVector
 {
+	
+	/**
+	 * Used during construction only.
+	 */
 	private TreeMap<Integer, Double> vectordata = new TreeMap<Integer, Double>();
-	double[] values;
+
+	/**
+	 * This is modelling the non-zeros in a sparse vector by storing a pair of indeces and its values.
+	 * All indices not available we assume the value is 0.
+	 */
 	int[] indeces;
+	double[] values; 
 
 	public SparseVectorArray(){}
 	
@@ -34,7 +50,28 @@ public class SparseVectorArray  implements ISparseVector
 		}
 		return r;
 	}
+	
+	@Override
+	public void addPoint(int index, double value) 
+	{
+		vectordata.put(index, value);
+	}
 
+	@Override
+	public double getPoint(int index) 
+	{
+		double r = 0;
+		if (vectordata.containsKey(index))
+		{
+			r = vectordata.get(index);
+		}
+		return r;
+	}
+
+
+	/**
+	 * Here the sparse vector is copied into a small list of indices, values pairs.
+	 */
 	@Override
 	public void finishVectorManipulation() 
 	{
@@ -120,23 +157,4 @@ public class SparseVectorArray  implements ISparseVector
 		r = (2 * Math.acos(r) / Math.PI);
 		return r;
 	}
-
-	
-	@Override
-	public void addPoint(int index, double value) 
-	{
-		vectordata.put(index, value);
-	}
-
-	@Override
-	public double getPoint(int index) 
-	{
-		double r = 0;
-		if (vectordata.containsKey(index))
-		{
-			r = vectordata.get(index);
-		}
-		return r;
-	}
-
 }

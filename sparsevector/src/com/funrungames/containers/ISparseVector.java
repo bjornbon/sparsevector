@@ -14,7 +14,7 @@ public interface ISparseVector
 	
 	/**
 	 * After creating and adding points, use this function
-	 * to finish the manipulation and start calling
+	 * to fconsolidate and start calling
 	 * the functions below.
 	 */
 	public void finishVectorManipulation();

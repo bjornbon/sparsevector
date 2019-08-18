@@ -28,36 +28,6 @@ public class SparseVectorTest
 
 	final double d7d[] = {1,1,1};
 	ISparseVector d7;
-
-	@Test
-	public void testTree() 
-	{
-		double d0d[] = {0,0,0};
-		d0 = new SparseVectorTree(d0d);
-		
-		double d1d[] = {0,0,1};
-		d1 = new SparseVectorTree(d1d);
-		
-		double d2d[] = {0,1,0};
-		d2 = new SparseVectorTree(d2d);
-
-		double d3d[] = {0,1,1};
-		d3 = new SparseVectorTree(d3d);
-
-		double d4d[] = {1,0,0};
-		d4 = new SparseVectorTree(d4d);
-
-		double d5d[] = {1,0,1};
-		d5 = new SparseVectorTree(d5d);
-
-		double d6d[] = {1,1,0};
-		d6 = new SparseVectorTree(d6d);
-
-		double d7d[] = {1,1,1};
-		d7 = new SparseVectorTree(d7d);
-		
-		testFunctions();
-	}
 	
 	@Test
 	public void testArray() 
