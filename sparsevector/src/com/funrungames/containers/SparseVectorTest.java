@@ -32,28 +32,13 @@ public class SparseVectorTest
 	@Test
 	public void testArray() 
 	{
-		double d0d[] = {0,0,0};
 		d0 = new SparseVectorArray(d0d);
-		
-		double d1d[] = {0,0,1};
 		d1 = new SparseVectorArray(d1d);
-		
-		double d2d[] = {0,1,0};
 		d2 = new SparseVectorArray(d2d);
-
-		double d3d[] = {0,1,1};
 		d3 = new SparseVectorArray(d3d);
-
-		double d4d[] = {1,0,0};
 		d4 = new SparseVectorArray(d4d);
-
-		double d5d[] = {1,0,1};
 		d5 = new SparseVectorArray(d5d);
-
-		double d6d[] = {1,1,0};
 		d6 = new SparseVectorArray(d6d);
-
-		double d7d[] = {1,1,1};
 		d7 = new SparseVectorArray(d7d);
 		
 		testFunctions();
